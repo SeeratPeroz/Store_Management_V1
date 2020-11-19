@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Stock Summary</title>
+<link href="../static/CSS/Stock_summary.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+	<div class="box">
+<h1>Stock Summary</h1>
+
+		{% csrf_token %}
+		<a href="{%url 'ExportStkSummary'%}"> <button class="button" type="submit">Export</button></a> <br><br>
+			<a href="/Home"><button id="button1">Done</button></a>
+
+	<br><br>
+	<table>
+		<tr>
+			<th colspan="2"> Product Details</th>
+			<th colspan="2">On Stock</th>
+			<th colspan="2">Purchases</th>
+			<th colspan="2">Sales</th>
+		</tr> 
+		<tr>
+			<th>Item Name</th>
+			<th>Unit Measure</th>
+			<th>Stock Name</th>
+			<th>Quantity</th>
+			<th> Quantity</th>
+			<th>Value</th>
+			<th> Quantity</th>
+			<th>Value</th>			
+		</tr>
+		{% for det in row %}
+		<tr>
+			<td>{{det.1}}</td>
+			<td>{{det.2}}</td>
+			<td>{{det.3}}</td>
+			<td>{{det.4}}</td>
+			<td>{{det.5}}</td>
+			<td>{{det.6}}</td>
+			<td>{{det.7}}</td>
+			<td>{{det.8}}</td>
+
+		</tr>
+		{% endfor %}
+	</table>
+	</div>
+</body>
+</html>

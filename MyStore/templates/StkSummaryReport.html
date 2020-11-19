@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Purchase Report</title>
+<style type="text/css">
+.Heading {
+    font-size: 43px;
+}
+	table tr th{
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    padding-top: 6px;
+	}
+	table tr td{
+    font-size: 16px;
+    padding-top: 7px;
+    padding-left: 5px;
+	}
+</style>
+	<script>
+n =  new Date();
+y = n.getFullYear();
+m = n.getMonth() + 1;
+d = n.getDate();
+document.getElementById("date").innerHTML = m + "/" + d + "/" + y;
+</script>
+</head>
+<body>
+
+
+<h1> <center class="Heading">Stock Summary Report </center></h1>
+<p id="date"></p>
+<hr><br>
+<table border="1">
+		<tr>
+			<th colspan="2"> Product Details</th>
+			<th colspan="2">On Stock</th>
+			<th colspan="2">Purchases</th>
+			<th colspan="2">Sales</th>
+		</tr>
+		<tr>
+			<th>Item Name</th>
+			<th>Unit Measure</th>
+			<th>Stock Name</th>
+			<th>Quantity</th>
+			<th> Quantity</th>
+			<th>Value</th>
+			<th> Quantity</th>
+			<th>Value</th>
+		</tr>
+		{% for det in row %}
+		<tr>
+			<td>{{det.1}}</td>
+			<td>{{det.2}}</td>
+			<td>{{det.3}}</td>
+			<td>{{det.4}}</td>
+			<td>{{det.5}}</td>
+			<td>{{det.6}}</td>
+			<td>{{det.7}}</td>
+			<td>{{det.8}}</td>
+
+		</tr>
+		{% endfor %}
+</table>
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Purchase Report</title>
+<style type="text/css">
+.Heading {
+    font-size: 43px;
+}
+	table tr th{
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    padding-top: 6px;
+	}
+	table tr td{
+    font-size: 16px;
+    padding-top: 7px;
+    padding-left: 5px;
+	}
+</style>
+	<script>
+n =  new Date();
+y = n.getFullYear();
+m = n.getMonth() + 1;
+d = n.getDate();
+document.getElementById("date").innerHTML = m + "/" + d + "/" + y;
+</script>
+</head>
+<body>
+
+
+<h1> <center class="Heading">Purchase Report </center></h1>
+<p id="date"></p>
+<hr><br>
+<table border="1">
+					<tr>
+						<th>Purchase Number </th>
+						<th>Purchase Date</th>
+						<th>Supplier Name </th>
+						<th>Amount </th>
+				</tr>
+
+				{% for invv in PURCHASE_SUM %}
+                <tr>
+						<td>{{invv.purNO}}</td>
+						<td>{{invv.purDate}}</td>
+						<td>{{invv.supID.supName}}</td>
+						<td> {{invv.tot}}</td>
+					</tr>
+				{% endfor %}
+</table>
+
+</body>
+</html>

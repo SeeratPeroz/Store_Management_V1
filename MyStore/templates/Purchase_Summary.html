@@ -1,0 +1,52 @@
+<html>
+<html>
+<head>
+	<title>Purchase Summary</title>
+	<link rel="stylesheet" type="text/css" href="../static/CSS/inovice Summary.css">
+<script>
+		function home(){
+			window.open("/Home", "_self");
+		}
+</script>
+	<body>
+		<div class="box">
+			<h1>Purchase Report</h1>
+			<button class="button2" onclick="home()" type="button">Back</button>
+				{% csrf_token %}
+				<a href="{%url 'ShowPURsummary'%}"> <button class="button" >Export</button> </a> <br>
+
+			<form method="post" action="Purchase_Summary">
+				 {% csrf_token %}
+				<label>From</label>
+  				<input id="start_date" type="date" name="start_date" value="{{start_date|date:"d/m/Y"}}">
+				<label>To</label>
+  				<input id="end_date" type="date" name="end_date" value="{{end_date|date:"d/m/Y"}}">
+				<button class="button1" type="submit">Search</button>
+	
+				<table>
+					<tr>
+						<th>Purchase Number </th>
+						<th>Purchase Date</th>
+						<th>Supplier Name </th>
+						<th>Amount </th>
+				</tr>
+					{% for int in pubs2 %}
+					<tr>
+						<td>{{int.purNO}}</td>
+						<td>{{int.purDate}}</td>
+						<td>{{int.supID.supName}}</td>
+						<td> {{int.tot}}</td>
+					</tr>
+					{% endfor %}
+				</table>
+		</form>
+
+
+
+		</div>
+
+
+
+	</body>
+</head>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+ <html lang="en" class="no-js">
+    <head>
+        <meta charset="UTF-8" />
+        <title>super market</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Login and Registration Form with HTML5 and CSS3" />
+        <meta name="keywords" content="html5, css3, form, switch, animation, :target, pseudo-class" />
+        <meta name="author" content="Codrops" />
+        <link rel="shortcut icon" href="../favicon.ico">
+
+						<link rel="stylesheet" type="text/css" href="../static/CSS/style.css">
+
+							<style>
+			body
+				{
+					background-image: url('../static/Pictures/321.jpg');
+					background-attachment: fixed;
+					background-size: 100% 100%;
+				}
+		</style>
+    </head>
+    <body>
+    {% csrf_token %}
+		<div id="navbar">
+		</div>
+        <div id="container"><br>
+            <div class="back">
+			    <div id="login-right">
+				<div class="login-margin"></div>
+
+				<form  method="post">
+                        {% csrf_token %}
+                                <h2>Sign In</h2>
+                                 <input class="long" name="username" type="text" placeholder="Username" required  autofocus >
+                                    <input class="short-pass" name="password" type="password" placeholder="Password" required >
+                               <button class="btn-signin" type="submit" name="login">Sign In</button>
+                             <br><br><br>
+                            </form>
+				   <form method="post" action="register">
+                                  {% csrf_token %}
+                                      <h2> Sign Up </h2>
+
+                                    <input class="long"  name="username" required="required" type="text" placeholder="Username" />
+                                    <input class="long"  name="Phone" required="required" type="text" placeholder="Phone Number" />
+                                    <input class="long"  name="password" required="required" type="password" placeholder="Password"/>
+                                    <input  class="name"  name="Password1" required="required" type="password" placeholder="Renter Password"/>
+
+                                </p>
+
+
+
+           					<button class="btn-signup" type="submit" name="signup" onclick="signup()">Sign Up</button>
+
+                            </form>
+
+
+
+
+				</div>
+
+        		<div id="login-left">
+				<h1>WELCOMETO <br> ZMARYAN SUPERMARKET</h1>
+
+                    {% for message in messages %}
+                    <h4 id="show_msg">  {{message}} </h4>
+                    {% endfor%}
+
+			</div>
+			<div class="clear"> </div>
+
+
+
+
+
+                <footer><font color="white" size="5px"> All Rights Reserved @ Kardan CSboyz | Copyright &copy; 2020 </font></footer>
+        </div>
+        </div>
+    </body>
+
+</html>

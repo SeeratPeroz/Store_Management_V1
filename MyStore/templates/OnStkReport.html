@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Purchase Report</title>
+<style type="text/css">
+.Heading {
+    font-size: 43px;
+}
+	table tr th{
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    padding-top: 6px;
+	}
+	table tr td{
+    font-size: 16px;
+    padding-top: 7px;
+    padding-left: 5px;
+	}
+</style>
+	<script>
+n =  new Date();
+y = n.getFullYear();
+m = n.getMonth() + 1;
+d = n.getDate();
+document.getElementById("date").innerHTML = m + "/" + d + "/" + y;
+</script>
+</head>
+<body>
+
+
+<h1> <center class="Heading">On Stock Products </center></h1>
+<p id="date"></p>
+<hr><br>
+<table border="1">
+		<tr>
+			<th>Item Name</th>
+			<th>Unit Measure</th>
+			<th>Stock Name</th>
+			<th>Quantity</th>
+		</tr>
+		{% for col in row %}
+		<tr>
+			<td>{{col.1}}</td>
+			<td>{{col.2}}</td>
+			<td>{{col.3}}</td>
+			<td>{{col.4}}</td>
+		</tr>
+		{% endfor %}
+</table>
+
+</body>
+</html>

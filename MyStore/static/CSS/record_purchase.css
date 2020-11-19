@@ -1,0 +1,226 @@
+body{
+	margin: 0;
+	padding: 0;
+	background-image: url(../Pictures/56555.jpg);
+
+
+}
+.msg{
+
+    margin-right: 100px;
+    margin-left: 0px;
+    width: auto;
+    height: auto;
+    background: rgba(255,255,255,.8);
+    box-shadow: 0 5px 15px rgba(0,0,0,.9);
+    top: 7%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;}
+.box{
+    margin-top: 91px;
+    margin-right: 100px;
+    margin-left: 0px;
+    margin-bottom: 10px;
+    width: 1372px;
+    height: auto;
+    background: rgba(255,255,255,.8);
+    box-shadow: 0 5px 15px rgba(0,0,0,.9);
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+}
+h1{
+    font-size: 31px;
+    text-align: center;
+    margin-right: 1040px;
+    border-bottom: 5px solid black;
+}
+
+label{
+    font-weight: bold;
+    margin-left: -1px;
+    margin-top: 0px;
+    padding-top: 0px;
+    padding-bottom: 28px;
+    font-size: 17px;
+
+}
+.box input[type="text8"]{
+	height: 50px;
+}
+.box input{
+    border-left: 0px solid black;
+    border-right: 0px solid black;
+    border-bottom: 2px solid black;
+    border-top: 0px solid black;
+    outline: none;
+    background: none;
+    width: 229px;
+    min-width: auto;
+    height: 26px;
+    margin-left: -58px;
+    margin-top: -49px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    font-size: 16px;
+    text-align: center;
+
+}
+
+
+
+.btn1{
+    margin-left: 77px;
+    width: 269px;
+    height: 30px;
+    margin-top: -17px;
+    background-color: white;
+    border-radius: 20px;
+    color: black;
+    font-weight: bold;
+    background: none;
+    border: 2px solid black;
+    text-align: center;
+
+}
+
+.btn3:hover{
+    background-color: black;
+    color: white;
+    margin-left: 0px;
+    margin-right: 0px;
+	    margin-left: 74px;
+
+}
+.btn2:hover{
+    background-color: black;
+    color: white;
+}
+.btn1:hover{
+    background-color: black;
+    color: white;
+}
+
+.btn2{
+    width: 100px;
+    height: 30px;
+    background-color: white;
+    border-radius: 20px;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    background: none;
+    border: 2px solid black;
+	margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 18px;
+}
+.btn3{
+    width: 269px;
+    height: 30px;
+    background-color: white;
+    border-radius: 20px;
+    color: black;
+    cursor: pointer;
+    font-weight: bold;
+    background: none;
+    border: 2px solid black;
+    margin-left: 74px;
+}
+.box select{
+	margin-left: 132px;
+}
+.tblList{
+    text-align: center;
+    table-layout: fixed;
+    width: 875px;
+    float: right;
+    margin-top: -702px;
+    margin-right: 21px;
+    color: white;
+}
+.btn4{
+    margin-left: 0px;
+    margin-top: 0px;
+    font-weight: bold;
+    width: 65px;
+	cursor: pointer;
+    background-color: red;
+    height: 32px;
+}
+.box input[type="button"]{
+    margin-left: -92px;
+    margin-top: -332px;
+    width: 30px;
+    background-color: black;
+    color: white;
+	cursor: pointer;
+    height: 21px;
+    margin-bottom: -18px;
+}
+
+
+.tblcontent{
+    border: none;
+    margin-right: 0px;
+    margin-left: 7px;
+    margin-top: -38px;
+    width: 532px;
+    height: 0px;
+    padding-bottom: 0px;
+}
+.tblList tr , th , td{
+    padding: 20px;
+    color: white;
+    border: 1px solid #080808;
+    border-collapse: collapse;
+    font-size: 14px;
+    font-family: arial;
+    background: linear-gradient(top , #3c3c3c 0% ,#222222 100%);
+    background: -webkit-linear-gradient(top,#3c3c3c 0%,#222222 100%);
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.tblList tr td{
+	color: white;
+	height: auto;
+}
+.tblcontent tr, td{
+    color: black;
+    font-size: 14px;
+    font-family: arial;
+    background: none;
+	border: none;
+}
+#texatrea {
+    margin-left: -63px;
+    width: 234px;
+	background:none;
+	border: none;
+	border-bottom: 2px solid;
+
+}
+
+.box select{
+    border-left: 0px solid black;
+    border-right: 0px solid black;
+    border-bottom: 2px solid black;
+    border-top: 0px solid black;
+    outline: none;
+    background: none;
+    width: 229px;
+    min-width: auto;
+    height: 26px;
+    margin-left: -58px;
+    margin-top: -49px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    font-size: 16px;
+    text-align: center;
+
+}

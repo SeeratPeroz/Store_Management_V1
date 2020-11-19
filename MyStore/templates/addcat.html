@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+    <link rel="Stylesheet" type="text/css" href="../static/CSS/addcat.css">
+        <script>
+        function winClose(){
+            window.close();
+        }
+    </script>
+</head>
+    <body>
+    
+     <div class="box1">
+			 	<h2>Add category</h2><br><br>
+         <br><br><br><br>
+
+         <form method="post" action="add_Category">
+             <table>
+                 <tr>
+                     <td colspan="3"><strong>
+                       <label> Category name:</label></strong>
+                     </td>
+                     <td>
+                         <input type="text" placeholder="Enter Category Name" name="catName">
+                     </td>
+                 </tr>
+                  <tr>
+                      {% csrf_token %}
+                     <td colspan="4"> <input type="submit" class="btn" value="Save"></td>
+                 </tr>
+                 <tr>
+                     <td colspan="4"> <input type="button" onclick="winClose()" class="btn1" value="Cancel"></td>
+
+                 </tr>
+             </table>
+         </form>
+         {% for message in messages %}
+         <h4 id="show_msg"> {{message}} </h4>
+         {% endfor%}
+         </div>
+    </body>
+</html>

@@ -1,0 +1,90 @@
+body{
+	margin: 0;
+	padding: 0;
+	background-image: url(../Pictures/55.jpg);
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background: url(../Pictures/55.jpg) no-repeat;
+    background-size: cover;
+    font: white;
+    
+	
+}
+.box{
+	width: 1000px;
+	height: auto;
+	background: rgba(255,255,255,.8);
+	top: 50%;
+	left: 50%;
+	position: absolute;
+	transform: translate(-50%,-50%);
+	box-sizing: border-box;
+}
+h1{
+	font-size:25px;
+	text-align: center;
+	margin: 10px 0px;
+    border-bottom: black 1px solid;
+}
+.box p{
+	font-weight: bold;
+	margin-left: 110px;
+
+}
+.box select{
+	margin-left: 0px;
+    background: rgba(255,255,255,.8);
+    width: 250px;
+}
+.box input[type="text"]{
+	margin-top:10px;
+	margin-left: 80px;
+    width: 250px;
+    background: none;
+}
+.btn{
+	margin-top: -30px;
+	margin-left: 350px;
+	font-weight: bold;
+	border-radius: 30px;
+	width: 120px;
+	height: 25px
+}
+.btn1{
+	margin-left: 300px;
+	border-radius: 30px;
+	width: 70px;
+	height: 30px;
+	font-weight: bold;
+    margin-top: 430px;
+}
+.btn2{
+	margin-left: 400px;
+	margin-top: -30px;
+	border-radius: 30px;
+	width: 80px;
+	height: 30px;
+	font-weight: bold;
+
+}
+
+table{
+	text-align: center;
+	margin-left: 100px;
+	margin-top:40px;
+	table-layout: fixed;
+	width: 800px;
+	margin-top: -430px;
+
+}
+table tr , th , td{
+	padding: 20px;
+	color: white;
+	border:1px solid #080808;
+	border-collapse: collapse;
+	font-size: 10px;
+	font-family: arial;
+	background:linear-gradient(top , #3c3c3c 0% ,#222222 100%);
+	background:-webkit-linear-gradient(top,#3c3c3c 0%,#222222 100%);
+}

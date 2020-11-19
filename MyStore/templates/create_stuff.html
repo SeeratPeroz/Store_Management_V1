@@ -1,0 +1,46 @@
+<html>
+    <head>
+    <meta charset="utf-8">
+        <title> Create ID for Employee</title>
+        <link rel="stylesheet" href="../static/CSS/desgin.css">
+<script>
+		function home(){
+			window.open("/Home", "_self");
+		}
+</script>
+    </head>
+<body>
+    <div class="login-box">     <form method="post" action="create_stuff">
+
+        <h1> Create User For Employee</h1>
+        <div class="textbox">
+    <input type="text" placeholder="Full Name" name="empName" required="required">
+    </div>
+
+
+    <div class="textbox">
+    	<input type="password" placeholder="Password" name="empPass" required="required">
+    </div>
+    <div class="textbox">
+    	<input type="password" placeholder="Confirm Password" name="empPass1" required="required">
+    </div>
+
+        <div class="textbox">
+        <input type="text" placeholder="Phone Number " name="empPhone" required="required">
+        </div>
+
+        <div class="textbox">
+        <input type="text" placeholder="Address " name="empAdd">
+        </div>
+
+   		 <input class="btn" type="submit" name="" value="Create">
+        <input class="btn" onclick="home()" type="button" name="" value="Back">
+        {% csrf_token %}
+        {% for message in messages %}
+        <h4 id="msge"> {{message}} </h4>
+        {% endfor%}
+     </form>
+    </div>
+    </body>
+
+</html>

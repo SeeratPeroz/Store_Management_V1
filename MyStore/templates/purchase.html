@@ -1,0 +1,58 @@
+<html>
+<head>
+    <link rel="stylesheet" href="../static/CSS/purchase.css">
+    <script>
+        function winClose(){
+            window.close();
+        }
+    </script>
+    </head>
+    <body>
+   
+        
+        
+  <div class="box">
+        <h1>                Purchase                </h1>
+      <br>
+      <br>
+      <br><br>
+      <br>
+      <br>
+      <br>
+
+    <form method="post" action="AddPuchase">
+        {% csrf_token %}
+    <div class="textbox">
+    <input type="date" placeholder="Date" name="purDate">
+    </div>
+
+        <div class="textbox">
+					<select name="dropdown" class="dp" required="required">
+						<option selected disabled="true">--- Select ---</option>
+						{% if sup %}
+							{% for cats in sup %}
+								<option value="{{cats.supID}}">{{cats.supName}}</option>
+							{% endfor %}
+						{% endif %}
+
+					</select>
+        </div>
+    
+        
+      <br>
+      <br>
+      <br>
+      
+    <input class="btn" type="submit" name="" value="Save">
+        <input class="btn" type="button" onclick="winClose()" name="" value="Cancel">
+
+    </form>
+
+                    {% for message in messages %}
+                    <h4 id="show_msg">  {{message}} </h4>
+                    {% endfor%}
+  </div>
+
+    </body>
+
+</html>

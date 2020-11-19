@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+	<title>Table</title>
+	<link rel="stylesheet" type="text/css" href="../static/CSS/Update_product.css">
+<script>
+		function home(){
+			window.open("/Home", "_self");
+		}
+</script>
+	<body>
+		<div class="box">
+			<h1>Update Product</h1>
+            <form method="post" action="{% url 'search_product' %}">
+				{% csrf_token %}
+				<br>
+			 <p>Search:
+				 <input type="search" placeholder="Enter to search" value="{{xc}}" name="sField"> 
+				 <button class="btnSearch"> Seach </button>
+				<button class="btn1" type="button" onclick="home()" >Back</button>
+
+			</form >
+			<hr><br>
+   			<form method="post" action="{% url 'Update_product' %}">
+    			{% for snt in stf %}
+			 		<p>Barcode:
+			 		<input type="text" value="{{snt.itmID}}" name="prdCode">  </p>
+			 		<p>Name:
+			 		<input type="text" value="{{snt.itmName}}" name="prdName">  </p>
+					<p>Unit of measure:
+			 		<input type="text1" value="{{snt.unitMeaure}}" name="prdUnit"> </p>
+			 		<p>Category:
+					<select name="dropdown">
+						{% for catt in cat %}
+								<option value="{{catt.catID}}"> {{catt.catName}} </option>
+						{% endfor %}
+					</select>
+				<p>comments:
+			 		<input type="text3" name="prdComment" value="{{snt.Desc}}">  </p>
+					{% csrf_token %}<br>
+			 <button class="btn" >Save</button>
+				{% endfor %}
+		</form>
+                    {% for message in messages %}
+                    <h4 id="show_msg">  {{message}} </h4>
+                    {% endfor%}
+        </div>
+
+	</body>
+</head>
+</html>

@@ -1,0 +1,51 @@
+<html>
+<head>
+	<title>Borrower List</title>
+	<link rel="stylesheet" type="text/css" href="../static/CSS/borrower.css">
+</head>
+
+	<body>
+		<div class="box">
+			<h1>Borrower List</h1>
+			<form>
+				<p>Search by:
+					<select><br>
+						<option>-- Select --</option>
+						<option>Inovice</option>
+						<option>Custmer name</option>
+					</select><br>
+					<input type="text"><br>
+					<button class="btn">Search</button><br></p>
+					<a href="{%url 'add'%}"> <button class="btn1" >Save</button> </a>
+				</form>
+					<a href="{%url 'HOME'%}"> <button class="btn2">Back</button> </a><br>
+			<br>
+			
+		<table>
+			<tr>
+				<th>Invoice #  </th>
+				<th>Stock </th>
+				<th>Quantity </th>
+				<th>Unit cost </th>
+				<th>Unit meagure </th>
+				<th>Amount </th>
+			</tr>
+			{%for x in bor%}
+		  <tr>
+		  	<td>{{x.invNO.invNO}}</td>
+		  	<td>{{x.stkID}}</td>
+		  	<td>{{x.Qty}}</td>
+		  	<td>{{x.sRate}}</td>
+		  	<td>{{x.itmID.unitMeaure}}</td>
+		  	<td>{{x.sumTotal}}</td>
+		  </tr>
+			{%endfor%}
+		</table>
+		<p>Paid:
+		<input type="checkbox"></p><br>
+		
+		</div>
+
+		
+	</body>
+</html>

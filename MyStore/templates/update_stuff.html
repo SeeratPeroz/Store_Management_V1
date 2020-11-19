@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+        <title> Cashier Details</title>
+        <link rel="stylesheet" href="../static/CSS/update.css">
+<script>
+    function myFunction() {
+  var x = document.getElementById("myInput");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
+		function home(){
+			window.open("/Home", "_self");
+		}
+</script>
+    </head>
+<body>
+
+    <div class="login-box">
+        <h1> Update Cashier Profile</h1>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="search" >
+            <form method="post" action="{% url 'Search_Cashier' %}">
+                {%csrf_token%}
+                <input  type="search"  placeholder="Enter Username" name="sField" REQUIRED="required">
+                <input class="btn" type="submit" name="" value="Search">
+            </form>
+        </div>
+        <br>
+   <form method="post" action="{% url 'Update_Cashier' %}">
+    {% for snt in stf %}
+       <div class="textbox">
+           <input type="text" placeholder="Full Name"  name="empName" value="{{snt.username}}">
+       </div>
+       <div class="textbox">
+           <input type="password" required="required" name="empPass" placeholder="Password" id="myInput" value="{{snt.password}}"/>  <input type="checkbox" onclick="myFunction()">
+
+       </div>
+       <div class="textbox">
+           <input type="text" placeholder="Phone Number " name="empPhone" value="{{snt.userPhone}}">
+       </div>
+       <div class="textbox">
+           <input type="text" placeholder="Address " name="empAdd" value="{{snt.userAdd}}">
+       </div>
+       {% csrf_token %}
+       <input class="btn" type="submit" name="" value="Update">
+    {% endfor %}
+       <input class="btn" onclick="home()" type="button" name="" value="Cancel">
+       <input type="hidden" name="hid" value="{{snt.id}}">
+        </form>
+                    {% for message in messages %}
+                    <h4 id="show_msg">  {{message}} </h4>
+                    {% endfor%}
+    </div>
+
+
+</body>
+
+</html>

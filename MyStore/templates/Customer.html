@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+    <link rel="stylesheet" href="../static/CSS/Customer.css">
+    <script>
+        function winClose(){
+            window.close();
+        }
+    </script>
+    </head>
+    <body>
+   
+        
+        
+  <div class="box">
+    <h1> Customer</h1>
+    <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <form action="add_Customer" method="post">
+          {% csrf_token %}
+        <div class="textbox">
+    <input type="text" placeholder="Name" name="spName">
+    </div>
+        
+        <div class="textbox">
+        <input type="text" placeholder="Phone Number " name="spPhone">
+        </div>
+    
+        <div class="textbox">
+        <input type="text" placeholder="Address " name="spAdd">
+        </div>
+       <br>
+  
+      
+    <input class="btn" type="submit" name="" value="Save">
+        <input class="btn" type="button" name="" value="Cancel" onclick="winClose()">
+    </form>
+
+                    {% for message in messages %}
+                    <h4 id="show_msg">  {{message}} </h4>
+                    {% endfor%}
+    </div>
+
+       
+    </body>
+
+</html>

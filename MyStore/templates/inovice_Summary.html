@@ -1,0 +1,50 @@
+<html>
+<html>
+<head>
+	<title>Invoice Summary</title>
+	<link rel="stylesheet" type="text/css" href="../static/CSS/inovice Summary.css">
+<script>
+		function home(){
+			window.open("/Home", "_self");
+		}
+</script>
+	<body>
+		<div class="box">
+			<h1>Invoice Summary</h1>
+						<button class="button2" onclick="home()" type="button">Cancel</button>
+
+				{% csrf_token %}
+				<a href="{%url 'ShowINVsummary'%}"> <button class="button" >Export</button> </a> <br>
+			<form method="post" >
+				{% csrf_token %}
+				<label>From</label>
+  				<input id="start_date" type="date" name="start_date" value="{{start_date|date:"d/m/Y"}}">
+				<label>To</label>
+  				<input id="end_date" type="date" name="end_date" value="{{end_date|date:"d/m/Y"}}">
+				<a href="{%url 'Invoice_Summary' %}"> <button class="button1" >Search</button></a>
+
+				<table>
+					<tr>
+						<th>Invoice Number </th>
+						<th>Invoice Date</th>
+						<th>Customer Name </th>
+						<th>Amount </th>
+				</tr>
+
+				{% for invv in pubs2 %}
+
+					<tr>
+						<td>{{invv.invNO}}</td>
+						<td>{{invv.Salse_Date}}</td>
+						<td>{{invv.cusID.cusName}}</td>
+						<td> {{invv.tot}}</td>
+					</tr>
+				{% endfor %}
+				</table>
+		</form>
+
+
+		</div>
+	</body>
+</head>
+</html>

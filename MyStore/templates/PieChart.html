@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<script>
+window.onload = function () {
+
+var chart = new CanvasJS.Chart("chartContainer", {
+	theme: "dark2",
+	exportFileName: "Doughnut Chart",
+	exportEnabled: true,
+	animationEnabled: true,
+	title:{
+		text: "Dashbored"
+	},
+	legend:{
+		cursor: "pointer",
+		itemclick: explodePie
+	},
+	data: [{
+		type: "doughnut",
+		innerRadius: 90,
+		showInLegend: true,
+		toolTipContent: "<b>{name}</b>: {y} AFNs (#percent%)",
+		indexLabel: "{name} - #percent%",
+		dataPoints: [
+			{ y: {{sale}}, name: "Income" },
+			{ y: {{purch}}, name: "Expence"},
+
+		]
+	}]
+});
+chart.render();
+
+function explodePie (e) {
+	if(typeof (e.dataSeries.dataPoints[e.dataPointIndex].exploded) === "undefined" || !e.dataSeries.dataPoints[e.dataPointIndex].exploded) {
+		e.dataSeries.dataPoints[e.dataPointIndex].exploded = true;
+	} else {
+		e.dataSeries.dataPoints[e.dataPointIndex].exploded = false;
+	}
+	e.chart.render();
+}
+
+}
+</script>
+<style>
+body{
+	margin: 0;
+	padding: 0;
+	background-color: #2343;
+	 background: url(../static/Pictures/1234.jpg) no-repeat;
+	 background-size: cover
+
+	
+}
+    .box{
+	width: 1000px;
+	height: 500px;
+	background:white;
+	top: 50%;
+	left: 50%;
+	position: absolute;
+	transform: translate(-50%,-50%);
+	  background: rgba(250,250,250,.9);
+    box-shadow: 0 5px 15px rgba(0,0,0,.7);
+    }
+    .button1{
+        	border-radius: 20px;
+	width: 300px;
+	height: 50px;
+    font-size: 20px;
+    margin-left: 300px;
+    }
+    .button1:hover{
+	background-color: black;
+	color: white;
+    }
+</style>
+</head>
+<body>
+    <div class="box">
+    <br> <br> 
+<div id="chartContainer" style="height: 370px; max-width: 920px; margin: 0px auto;"></div>  <br>
+        <a href="/Home"> <button class="button1"> Done </button> </a>
+    </div>
+<script src="../static/JS/canvasjs.min.js"></script>
+</body>
+</html>

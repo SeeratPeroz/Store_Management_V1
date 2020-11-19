@@ -1,0 +1,41 @@
+<html>
+<head>
+    <link rel="stylesheet" href="../static/CSS/supplier.css">
+    
+    </head>
+    <body>
+  <div class="box">
+        <h1>                Supplier                </h1>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <form method="post">
+        <div class="textbox">
+    <input type="text" placeholder="Name" name="spName" required="required">
+    </div>
+        
+        <div class="textbox">
+        <input type="text" placeholder="Phone Number " name="spPhone" required="required">
+        </div>
+        <div class="textbox">
+        <input type="text" placeholder="Address " name="spAdd" required="required">
+        </div>
+       <br>
+          {% csrf_token %}
+        <input class="btn" type="submit" name="" value="Save">
+        <a href="/Home"> <input class="btn1" type="button" name="" value="Cancel"> </a>
+
+      </form>
+                    {% for message in messages %}
+                    <h4 id="show_msg">  {{message}} </h4>
+                    {% endfor%}
+    </div>
+        
+       
+    </body>
+
+</html>

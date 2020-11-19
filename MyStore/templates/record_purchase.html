@@ -1,0 +1,112 @@
+<!doctype html>
+<html>
+
+<head>
+	<title>Table</title>
+	<script>
+		function home(){
+			window.open("/Home", "_self");
+		}
+		function OpenWin(){
+			window.open("AddPuchase","blank", "width=600, height=600");
+		}
+		function OpenWin1(){
+			window.open("Stock","blank", "width=600, height=600");
+		}
+	</script>
+	<link rel="stylesheet" type="text/css" href="../static/CSS/record_purchase.css">
+</head>
+	<body>
+
+		<div class="box">
+					{% for message in messages %}
+                    <h4 id="show_msg">  {{message}} </h4>
+                    {% endfor%}
+			<h1>Record Purchase</h1><br><br><br><br>
+			<table border="none" class="tblcontent">
+			<form method="post">
+				{% csrf_token %}
+					<tr>
+						<td> <label> Purchase: </label></td>
+						<td class="td2">
+					<select name="dropdown" class="dp" required="required">
+						<option selected disabled="true">--- Select ---</option>
+						{% if sup %}
+							{% for cats in sup %}
+								<option value="{{cats.purNO}}">{{cats.supID}} {{cats.purDate}}</option>
+							{% endfor %}
+						{% endif %}
+
+					</select>
+						</td> <td><input onclick="OpenWin()" type="button" class="btnPlus" value="+"></td>
+					</tr>
+					<tr>
+						<td> <label> Product: </label></td>
+						<td class="td2" colspan="2"> <input  type="text" value="{{xc}}" required="required" name="productNO">  </td>
+					</tr>
+					<tr>
+						<td> <label> Stock Name: </label></td>
+						<td class="td2">
+							<select name="dropdown2" class="dp" required="required">
+								{% if sup1 %}
+									{% for cats in sup1 %}
+										<option value="{{cats.stkID}}">{{cats.stkName}}</option>
+									{% endfor %}
+								{% endif %}
+							</select>
+						</td><td><input type="button" onclick="OpenWin1()" class="btnPlus" value="+"></td>
+					</tr>
+					<tr>
+						<td> <label> Quantity: </label></td>
+						<td class ="td2" colspan="2"> <input type="text" name="prdQty">  </td>
+					</tr>
+					<tr>
+						<td> <label> Unit Cost: </label></td>
+						<td class="td2" colspan="2"> <input type="text"   name="unitCost">  </td>
+					</tr>
+					<tr>
+						<td> <label> Sale Rate: </label></td>
+						<td class="td2" colspan="2"> <input type="text"   name="saleRate" required>  </td>
+					</tr>
+					<tr>
+						<td> <label> Comment: </label></td>
+						<td class="td2" colspan="2"> <textarea cols="28" rows="5" id="texatrea" name="comment"></textarea>  </td>
+					</tr>
+
+					<tr>
+						<td colspan="3"> <button class="btn1">Add to the list</button> </td>
+					</tr>
+					<tr>
+						  <td colspan="3"> <a href="{% url 'cancelPurchase' %}"> <button  class="btn3" onclick="home()">Back</button> </a></td>
+					</tr>
+				</form>
+				</table>
+
+
+		<table class="tblList">
+			<tr>
+				<th>Product Name  </th>
+				<th>Stock </th>
+				<th>Quantity </th>
+				<th>Unit cost </th>
+				<th>Unit meagure </th>
+				<th>Amount </th>
+				<th>Remove </th>
+
+			</tr>
+			{% for cats in sup2 %}
+		  <tr >
+		  	<td>{{cats.itmID}}</td>
+		  	<td>{{cats.sktID}}</td>
+		  	<td>{{cats.purQty}}</td>
+		  	<td>{{cats.UnitCost}}</td>
+		  	<td>{{cats.itmID.unitMeaure}}</td>
+		  	<td>{{cats.purTotal}}</td>
+		  	<td> <a href="{%url 'RemovePurch' cats.itmID.itmID cats.purNO.purNO %}"> <button class="btn4">X</button> </a></td>
+		  </tr>
+			{% endfor %}
+		</table>
+
+        </div>
+	</body>
+</html>

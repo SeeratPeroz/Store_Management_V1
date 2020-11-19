@@ -1,0 +1,93 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background: url(../Pictures/1234.jpg) no-repeat;
+    background-size: cover;
+}
+
+
+.box{
+    margin: 12px 40px;
+    padding: 0;
+    height: 300px;
+    width: 309px;
+    position: relative;
+    max-width: 600px;
+    padding: 50px;
+    background: rgba(250,250,250,.9);
+    box-shadow: 0 5px 15px rgba(0,0,0,.9);
+
+}
+
+.box h1{
+    float: left;
+    font-size: 22px;
+    border-bottom: 6px solid black;
+    margin-bottom: 50px;
+    padding: 13px 0;
+    color: black;
+    width: 171px;
+    text-shadow: 0px 0px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+
+.textbox{
+    border-bottom:  2px solid black;
+}
+
+
+.textbox i{
+    width: 400px;
+    float: left;
+    text-align: center;
+}
+
+
+.textbox select{
+    border: none;
+    outline: none;
+    background: none;
+   
+    
+    width: 300px;
+   
+    margin: 3px;
+}
+
+.textbox input{
+    border: none;
+    outline: none;
+    background: none;
+
+
+    width: 300px;
+
+    margin: 3px;
+}
+.btn{
+    width: 100%;
+    background: none;
+    border: 2px solid black;
+    margin: 0px 0px;
+    color: black;
+}
+
+.btn:hover{
+    background: black;
+    color: white;
+}
+
+.box input[type="button1"]{
+    width: 30px;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    height: 21px;
+    float: right;
+    margin-right: -48px;
+    margin-bottom: -21px;
+    margin-top: -26px;
+}

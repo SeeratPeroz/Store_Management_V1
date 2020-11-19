@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Table</title>
+	<link rel="stylesheet" type="text/css" href="../static/CSS/add_product.css">
+	<script>
+		function opnCat(){
+		window.open("add_Category", "blank","width=600, height=600");
+		src="add_product"
+		}
+
+	</script>
+</head>
+<body>
+ <div class="box">
+	<h1>Add  Product</h1>
+	<table><br>
+		<form method="post">
+			 <tr>
+				<td colspan="2"><label>Product code: </label></td>
+				<td><input type="text" value="{{xc}}" name="Pcode" required="required"/></td>
+			</tr>
+
+			 <tr>
+				<td colspan="2"><label>Name:</label></td>
+				<td> <input type="text" name="Pname" required="required"></td>
+			</tr>
+			 <tr>
+				<td colspan="2"><label>Unit of Measure:</label></td>
+				<td colspan="2"><input type="text" name="UnM"></td>
+			</tr>
+			 <tr>
+				<td colspan="2"><label>Category:</label></td>
+				<td>
+					<select name="dropdown">
+						<option selected disabled="true">--- Select ---</option>
+						{% if cat %}
+							{% for cats in cat %}
+								<option value="{{cats.catID}}">{{cats.catName}}</option>
+							{% endfor %}
+						{% endif %}
+
+					</select>
+				 </td>
+				 <td> <input type="button" class="plus" value="+" onclick="opnCat()"> </td>
+			</tr>
+			 <tr>
+				<td colspan="2"><label>Description:</label></td>
+				<td colspan="2"><input type="text" name="desc"></td>
+			</tr>
+			<tr align="center">
+				<td> {% csrf_token %}
+
+					<input type="submit" class="btn" value="Save"></td>
+				<td>
+					<a href="Add_Product"><input type="button" class="btn2" value="Refresh"></a>
+				</td>
+				<td>
+				 	<a href="/Home">  <input type="button" class="btn1" value="Cancel"> </a>
+				</td>
+			</tr>
+		</form>
+	</table>
+                    {% for message in messages %}
+                    <h4 id="show_msg">  {{message}} </h4>
+                    {% endfor%}
+	</div>
+</body>
+</html>

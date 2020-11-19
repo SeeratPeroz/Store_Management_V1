@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" href="../static/CSS/king.css">
+<body>
+    <div class="head">
+    <h2> SuperMarket Managment System </h2>
+        <a href="/logout"><img src="../static/Pictures/Shutdown.png" alt="" width="30" height="30" /> </a>
+    </div>
+    
+    
+        <div class="box6">
+    <h3> Profile </h3>
+            
+            <img src="../static/Pictures/avatart.png" alt="" width="208" height="128" />
+            <a href="#"> {{c}}</a>
+    
+    </div>
+    
+    <div class="cantin2">
+    
+    <div class="box2">
+    <h1>Product </h1>
+    <br>
+    <a href="Add_Product"> Add Product</a>
+    <br>
+    <a href="search_product"> Update Product</a>
+    <br>
+    <a href="OnStock"> On Stock</a>
+    <br>    
+    <br>
+    
+    
+    </div>
+    
+    <div class="box3">
+    <h1> Income </h1>
+    <br>
+    <a href="Invoice_Summary"> Invoice Details </a>
+    <br>
+    <a href="Create_Invoice">Create Invoice</a>
+    <br>
+    <!--a href="borrower"> Borrower</a>
+    <br-->
+    
+    
+    </div>
+    </div>
+    
+    
+    
+    <div class="cantin1">
+    <div class="box4">
+        <div class="box44">
+    <h4> Expences </h4>
+    <br>
+    <a href="Record_Purchase"> Record Purchaser</a>
+    <br>
+
+     <a href="Supplier"> Add Suplier</a>
+        </div>
+    </div>
+    
+    
+    <div class="box5">
+    <h1> Summary </h1>
+    <br>
+    <a href="PieChart"> Dashbored</a>
+    <br>
+    <a href="Stock_Summary"> Stock Summary</a>
+    
+    <br>
+     <a href="Purchase_Summary"> Purchaces Report</a>
+    </div>
+    
+            {% for message in messages %}
+                   <h4 id="show_msg" style="color:black; ">  {{message}} </h4>
+                    {% endfor%}
+    </div>
+   
+    </body>
+</html>

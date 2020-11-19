@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="../static/CSS/Stock.css">
+    <script>
+        function winClose(){
+            window.close();
+        }
+    </script>
+    </head>
+    <body>
+
+
+
+  <div class="box">
+        <h1>                Stock                </h1>
+      <br>
+      <br>
+      <br><br>
+      <br>
+      <br>
+      <br>
+
+    <form method="post" action="Stock">
+        {% csrf_token %}
+    <div class="textbox">
+    <input type="text" placeholder="Stock Name" name="sktName">
+    </div>
+
+
+      <br>
+      <br>
+      <br>
+
+        <input class="btn" type="submit" name="" value="Save">
+        <input class="btn" type="button" onclick="winClose()" name="" value="Cancel">
+
+    </form>
+
+                    {% for message in messages %}
+                    <h4 id="show_msg">  {{message}} </h4>
+                    {% endfor%}
+  </div>
+
+    </body>
+
+</html>

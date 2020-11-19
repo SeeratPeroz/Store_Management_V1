@@ -1,0 +1,207 @@
+body{
+     margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background: url(../Pictures/let.jpg) no-repeat;
+    background-size: cover;
+    
+}
+
+
+.head{
+    margin-right: -4px;
+    margin-left: -4px;
+    margin-bottom: -4px;
+    height: 70px;
+    width: 100%;
+    background: rgba(0,0,0,.8);
+    box-shadow: 0 5px 15px rgba(0,0,0,.9);
+    color: white;
+    margin-top: -23px;
+    
+}
+
+
+h2{
+    text-align: center;
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    font-family: sans-serif;
+    color: coral;
+}
+
+.box{
+     margin: 120px 290px;
+    padding: 0;
+    height: 50px;
+    width: 150px;
+  position: relative;
+    max-width: 600px;
+    padding: 50px;
+    background: rgba(0,0,0,.8);
+    box-shadow: 0 5px 15px rgba(0,0,0,.9);
+    color: white;
+}
+
+box:hover{
+    background: rgba(0,0,0,.8);
+}
+
+h1{
+    margin: -30px;
+    font-size: 20px;
+    float: left;
+    font-family:Century Gothic;
+     color: coral;
+    
+}
+
+a{
+    margin: -150px 0px;
+    text-decoration: none;
+    color: white;
+    font-family:Century Gothic;
+    line-height: 20px;
+    
+    
+}
+a:hover{
+    border: solid 1px white;
+}
+
+.box2{
+     margin: -100px 290px;
+    padding: 0;
+    height: 50px;
+    width: 150px;
+  position: relative;
+    max-width: 600px;
+    padding: 50px;
+    background: rgba(0,0,0,.8);
+    box-shadow: 0 5px 15px rgba(0,0,0,.9);
+    color: white;
+}
+
+
+.box3{
+     margin: 120px 290px;
+    padding: 0;
+    height: 50px;
+    width: 150px;
+  position: relative;
+    max-width: 600px;
+    padding: 50px;
+    background: rgba(0,0,0,.8);
+    box-shadow: 0 5px 15px rgba(0,0,0,.9);
+    color: white;
+}
+
+.box4{
+     margin: 20px 100px;
+    padding: 0;
+    height: 50px;
+    width: 150px;
+    position: relative;
+    max-width: 600px;
+    padding: 50px;
+    background: rgba(0,0,0,.8);
+    box-shadow: 0 5px 15px rgba(0,0,0,.9);
+    color: white;
+}
+
+
+.box5{
+     margin: 20px 100px;
+    padding: 0;
+    height: 50px;
+    width: 150px;
+    position: relative;
+    max-width: 600px;
+    padding: 50px;
+    background: rgba(0,0,0,.8);
+    box-shadow: 0 5px 15px rgba(0,0,0,.9);
+    color: white;
+}
+
+.box6{
+    margin-top: 50px;
+    margin-right: 300px;
+    margin-left: 370px;
+    margin-bottom: 50px;
+    padding: 0;
+    height: 500px;
+    width: 636px;
+    position: relative;
+    max-width: 577px;
+    padding-top: 50px;
+    padding-right: 50px;
+    padding-left: 50px;
+    padding-bottom: 50px;
+    background: rgba(255,255,255,.8);
+    box-shadow: 0 5px 15px rgba(0,0,0,1);
+    color: white;
+}
+h3{
+    color: black;
+    margin: -40px 10px;
+    font-size: 30px;
+    
+
+    border-bottom: 5px solid black ;
+    margin-bottom: -20px;
+    width: 100px;
+
+
+}
+
+.box6 a{
+    margin-top: 20px;
+    margin-right: 350px;
+    margin-left: 225px;
+    margin-bottom: 20px;
+    color: black;
+}
+
+.cantin1{
+    margin-top: 330px;
+    margin-right: 530px;
+    margin-left: 636px;
+    margin-bottom: 330px;
+    background-color: none;
+    width: 300px;
+}
+
+.cantin2{
+    margin-top: -408px;
+    margin-right: 50px;
+    margin-left: 137px;
+    margin-bottom: -650px;
+    background-color: none;
+    width: 300px;
+}
+img{
+    margin-top: 20px;
+    margin-right: 311px;
+    margin-left: 178px;
+    margin-bottom: 20px;
+}
+
+.head img{
+    width: 50px;
+    height: 50px;
+    margin-top: -74px;
+    padding-bottom: 24px;
+    float: right;
+    margin-right: 29px;
+}
+
+h4{
+    padding: -90px 0px;
+    color: coral;
+}
+
+.box44{
+    margin: -60px 0px;
+}

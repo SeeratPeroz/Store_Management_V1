@@ -1,0 +1,139 @@
+<!doctype html>
+<html>
+<head>
+	<title>Table</title>
+	<link rel="stylesheet" type="text/css" href="../static/CSS/Create_Invoice.css">
+	<script>
+		function OpenWin(){
+			window.open("Invoice","blank", "width=600, height=600");
+		}
+	</script>
+</head>
+	<body>
+
+		<div class="box">
+			{% for message in messages %}
+                    <h4 id="show_msg">  {{message}} </h4>
+                    {% endfor%}
+			<h1>Create Invoice</h1><br><br><br><br>
+			<table border="none" class="tblcontent">
+			<form method="post">
+				{% csrf_token %}
+					<tr>
+						<td> <label> Invoice: </label></td>
+						<td class="td2">
+					<select name="dropdown" class="dp" required="required">
+
+						<option selected disabled="true">--- Select ---</option>
+						{% for cats in sup %}
+								<option value="{{cats.invNO}}">{{cats.cusID}} {{cats.Salse_Date}}</option>
+						{% endfor %}
+					</select>
+						</td> <td><input onclick="OpenWin()" type="button" class="btnPlus" value="+"></td>
+					</tr>
+					<tr>
+						
+						<td> <label> Product </label></td>
+						<td class="td2" colspan="2"> <input type="text" value="{{xc}}" required="required" name="productNO">  </td>
+						
+					</tr>
+				
+					<tr>
+						<td> <label> Quanitity </label></td>
+						<td class="td2" colspan="2"> <input type="text" required name="prdQty" >  </td>
+					</tr>
+					<tr>
+						<td> <label> Unit Of Cost </label></td>
+						{% if srate %}
+						{% for xrate in srate %}
+						<td class="td2" colspan="2"> <input type="text" value="{{xrate.ssRate}}" required name="unitCost">  </td>
+						{% endfor %}
+						{% endif %}
+					</tr>
+					<tr>
+						<td> <label> Stock Name: </label></td>
+						<td class="td2">
+							<select name="dropdown2" class="dp" required="required">
+								{% if sup1 %}
+									{% for cats in sup1 %}
+										<option value="{{cats.stkID}}">{{cats.stkName}}</option>
+									{% endfor %}
+								{% endif %}
+							</select>
+						</td><td></td>
+					</tr>
+				<tr>
+						<td> <label> Discount </label></td>
+						<td class="td2" colspan="2"> <input type="text" value="0" name="dicount">  </td>
+					</tr>
+				
+				
+				<tr>
+						<td> <label> Extra Charge </label></td>
+						<td class="td2" colspan="2"> <input type="text" value="0" name="extraCH">  </td>
+					</tr>
+				<!--tr>
+						<td> <label class="lebal" >Paid </label></td>
+						<td class="td2" colspan="2"> <input type="checkbox" checked name="paid">
+						</td>
+					</tr-->
+
+				<tr>
+						<a href="{%url 'Create_Invoice' %}"> <td class="td2" colspan="3"> <button  class="btn1" >Add to the list</button> </td> </a>
+					</tr>
+
+
+
+
+				</form>
+				</table>
+
+
+		<table class="tblList">
+			
+			<tr> <th colspan="7"> Products Added </th></tr>
+			</tr>
+				<th>Product Name </th>
+				<th>Quantity </th>
+				<th>Unit cost </th>
+				<th>Discount </th>
+				<th>Extra </th>
+				<th>Amount </th>
+				<th>Remove </th>	 
+		  </tr>
+			  {% for cats in sup2 %}
+		  <tr>
+				<td class="tblData"> {{cats.itmID}} </td>
+				<td class="tblData"> {{cats.Qty}} </td>
+				<td class="tblData"> {{cats.sRate}} </td>
+				<td class="tblData"> {{cats.sumDiscount}} </td>
+				<td class="tblData"> {{cats.EXtraSale}} </td>
+				<td class="tblData"> {{cats.TotalSale}} </td>
+				<td class="tblData"> <a href="{%url 'RemoveINV' cats.itmID.itmID cats.invNO.invNO %}"> <button class="btn4">X</button> </a> </td>
+		  </tr>
+			  {% endfor %}
+		</table>
+
+	<ul>
+		<li><a> Sub Total:   {{sumTotal}} </a></li>
+		<li> Discount:       {{sumDiscount}}</li>
+		<li> Total:          {{TOTAL}} </li>
+		
+	</ul>
+	
+
+	<br>
+
+			<a href="/Home"> <button class="btn1" >Back</button> </a>
+	<!--button  class="btn1" >Cancel</button -->
+	<br>
+	<br>
+	<br>
+<br>
+	<br>
+	<br>
+	<br>
+        </div>
+
+	</body>
+</html>
