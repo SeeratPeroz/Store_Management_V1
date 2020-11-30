@@ -7,7 +7,7 @@
     1. Install Python (https://www.python.org/downloads/)
         NOTE: Add path while install Python
     2. Open CMD and install following requirements:
-        a) pip install django
+        a) pip3.8 install django
         b) pip install opencv-python
         c) pip install pyzbar
         d) pip install cv2
